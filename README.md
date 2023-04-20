@@ -34,3 +34,78 @@ name varchar (50),
 age int);
 
 DROP TABLE <name>
+
+### INSERTING DATA
+
+INSERT INTO cats(name, age) VALUES (’Jetson’ , 7);
+
+INSERT INTO cats(name,age) VALUES ('Meatball',5),('Turkey',1),('PotatoFace',15);
+
+\를 넣어서 특수문자를 넣을 수 있다. (’mario\’s pizza’)
+
+CREATE TABLE cats2 (
+
+name VARCHAR(100) NOT NULL,
+
+age INT NOT NULL
+
+);
+
+CREATE TABLE cats3(
+
+name VARCHAR(100) DEFAULT ‘unnamed’,
+
+age INT DEFAULT 99
+
+);
+
+
+
+**default 값은 null 값을 넣어도 된다.**
+
+CREATE TABLE cats4 (
+
+name VARCHAR(20) NOT NULL DEFAULT 'unnamed',
+
+age INT NOT NULL DEFAULT 99
+
+);
+
+CREATE TABLE unique_cats (
+cat_id INT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+age INT NOT NULL
+);
+
+CREATE TABLE unique_cats (
+cat_id INT AUTO_INCREMENT,
+name VARCHAR(100) NOT NULL,
+age INT NOT NULL,
+
+PRIMARY KEY(cat_id)
+);
+
+**Primary Key는 not null이다**
+
+## CRUD Basic
+
+SELECT cat_id FROM cats;
+SELECT name,breed FROM cats;
+SELECT name,age FROM cats WHERE breed = 'Tabby';
+SELECT cat_id,age FROM cats WHERE cat_id = age;
+
+### Aliases
+
+SELECT name AS kittyName FROM cats;
+
+### Update
+
+UPDATE cats SET breed= 'shortair' WHERE breed='tabby';
+
+//where 쓰지 않으면 전체 업데이트됨
+
+### Delete
+
+DELETE FROM cats WHERE name = 'Egg';
+
+DELETE FROM cats
