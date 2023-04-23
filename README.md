@@ -141,3 +141,58 @@ delete from shirts where last_worn=200;
 delete from shirts where article='tank top';
 delete from shirts;
 drop table shirts;
+
+
+### 터미널로 SQL 추가
+
+1. sql이 저장된 폴더로 이동
+2. mysql> use book_shop
+3. mysql> source book_data.sql
+
+### String Function
+
+select concat('h','e','l','l');
+select concat(author_fname,' ',author_lname) as fullname from books;
+
+select concat_ws(' ','hi','bye','lol'); //단어 사이에 첫번째 값이 들어감
+
+>hi bye lol
+
+select substring('Hello World' , 1, 4);// 첫번째 단어의 1자리에서 4개의 character
+
+>Hell
+
+select substring('Hello World' , 2, 4);
+
+>ello
+
+select substring('Hello World' , 7); // 3번째 값이 없으면 7자리에서 끝까지 출력
+
+>World
+
+select substring('Hello World' , -1); //음수는 뒤에서부터
+
+>d
+
+SELECT SUBSTRING(title, 1, 10) AS 'short title' FROM books;
+
+select concat(substr(title,1,10), '...') as short_title from books;
+
+from books
+
+### REPLACE
+
+select replace(title, ' ','-') from books ; // 바꾸고 싶은 문장, 탐색할 문장, 바꿀 문장
+
+### REVERSE
+
+select reverse(’Hello World’);
+
+### CHAR LENGTH
+
+SELECT CHAR_LENGTH('Hello World');
+
+### LOWER & UPPER
+
+SELECT UPPER('Hello World');
+SELECT LOWER('Hello World');
